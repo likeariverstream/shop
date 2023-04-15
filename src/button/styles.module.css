@@ -1,0 +1,26 @@
+@import url(../styles/index.css);
+
+.button {
+    border: 0;
+    border-radius: 6px;
+    margin: 0;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 40px;
+    width: 200px;
+    background: var( --button-background-yellow-color);
+    color: var(--deep-purple-black);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
