@@ -2,14 +2,15 @@
   font-family: Inter, Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
   --background-color: #36393f;
   --background-color-primary: #2f3136;
   --button-background-blue-color: #4680c2;
   --button-background-yellow-color: #fbc333;
   --sub-item-list: #95999e;
-  --white-color: #ffffff;
+  --white-color: #fff;
   --grey-raven-color: #8e9297;
-  --brownish-grey-color: #666666;
+  --brownish-grey-color: #666;
   --midnight-blue-color: #202d3d;
   --medium-dark-shade-grey-color: #4d4d4d;
   --deep-purple-black: #030315;

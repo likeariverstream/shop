@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import styles from './styles.module.css'
 
 interface ButtonProps {
@@ -8,9 +8,13 @@ interface ButtonProps {
     disabled?: boolean
 }
 
-export const Button = ({ onClick, text, children, disabled = false }: ButtonProps) => {
-
+export function Button({
+    onClick, text, children, disabled = false,
+}: ButtonProps) {
     return (
-        <button className={styles.button} onClick={onClick} disabled={disabled} >{children}{text}</button>
+        <button className={styles.button} onClick={onClick} disabled={disabled}>
+            {children}
+            {text}
+        </button>
     )
 }

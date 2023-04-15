@@ -1,4 +1,4 @@
-@import url(../styles/index.css);
+@import url("../styles/index.css");
 
 .button {
     border: 0;
@@ -13,7 +13,7 @@
     width: 200px;
     background: var( --button-background-yellow-color);
     color: var(--deep-purple-black);
-    font-family: 'Inter';
+    font-family: Inter, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;

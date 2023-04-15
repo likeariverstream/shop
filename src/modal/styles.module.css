@@ -1,0 +1,63 @@
+@import url("../styles/index.css");
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var( --deep-purple-black);
+    z-index: 2;
+    margin: 0 auto;
+    opacity: .6;
+}
+
+.modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--background-color);
+    position: fixed;
+    min-width: 300px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    z-index: 4;
+    opacity: 1;
+    border-radius: 24px;
+}
+
+.button {
+    background: 0;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    align-self: flex-end;
+    transition: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.button>svg {
+    display: block;
+}
+
+.text {
+    color: var(--white-color);
+    display: block;
+    margin: 0;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    justify-self: center;
+}

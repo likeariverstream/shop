@@ -1,0 +1,10 @@
+/node_modules
+*.lock
+*.ts
+*.tsx
+*.js
+*.json
+*.md
+*.html
+*.svg
+*.png

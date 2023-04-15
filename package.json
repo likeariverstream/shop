@@ -6,17 +6,31 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "eslint": "eslint \"**/*.{ts,tsx}\"",
+    "eslint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "stylelint": "stylelint ."
   },
   "dependencies": {
     "@types/node": "^18.15.11",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router": "^6.10.0",
+    "react-router-dom": "^6.10.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
+    "@types/react-router": "^5.1.20",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/parser": "^5.58.0",
     "@vitejs/plugin-react": "^3.1.0",
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-react": "^7.32.2",
+    "stylelint": "^15.4.0",
+    "stylelint-config-standard": "^32.0.0",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
   }

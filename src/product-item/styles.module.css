@@ -1,0 +1,90 @@
+@import url("../styles/index.css");
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px;
+    transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.item:hover {
+    background: var(--background-color-primary);
+    border-radius: 16px;
+}
+
+.image {
+    display: block;
+    width: 96px;
+    height: 96px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.title {
+    color: var(--white-color);
+    display: block;
+    margin: 0;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.button {
+    border: 0;
+    border-radius: 0;
+    background: 0;
+    margin: 0;
+    transition: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.button>svg {
+    display: block;
+}
+
+.button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.count {
+    display: block;
+    margin: 0;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--white-color);
+}
+
+.cost {
+    display: block;
+    margin: 0;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--white-color);
+}

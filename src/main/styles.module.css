@@ -1,3 +1,4 @@
+@import url("../styles/index.css");
 
 .main {
     display: flex;
@@ -20,16 +21,17 @@
     gap: 24px;
 }
 
-@media screen and (max-width: 1320px) {
+@media screen and (width < 1320px) {
     .products {
         grid-template-columns: repeat(2, max-content);
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (width < 800px) {
     .products {
         grid-template-columns: repeat(1, max-content);
     }
+
     .main {
         flex-direction: column;
     }

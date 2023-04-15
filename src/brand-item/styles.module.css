@@ -1,4 +1,4 @@
-@import url(../styles/index.css);
+@import url("../styles/index.css");
 
 .item {
     display: flex;
@@ -21,9 +21,11 @@
     border-radius: 2px;
 
 }
+
 .checkbox:hover {
   opacity: 0.8;
 }
+
 .checkbox:active {
   transform: scale(0.9);
 }
@@ -49,7 +51,7 @@
 .title {
     display: block;
     margin: 0;
-    font-family: 'Inter';
+    font-family: Inter, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;

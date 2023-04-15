@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import styles from './styles.module.css'
 
 interface BrandItemProps {
@@ -8,8 +8,7 @@ interface BrandItemProps {
     id: number
 }
 
-export const BrandItem = ({ onClick, title, active = false }: BrandItemProps) => {
-
+export function BrandItem({ onClick, title, active = false }: BrandItemProps) {
     return (
         <div className={styles.item}>
             <button onClick={onClick} className={`${styles.checkbox} ${active && styles.active}`} />

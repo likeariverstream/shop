@@ -1,4 +1,7 @@
-export type Products = Array<Product>
+export interface Regularprice {
+    currency: string
+    value: number
+}
 
 export interface Product {
     type: string
@@ -10,12 +13,7 @@ export interface Product {
     brand: number
 
 }
-
-interface Regularprice {
-    currency: string
-    value: number
-}
-
+export type Products = Array<Product>
 export interface Brand {
     id: number
     title: string

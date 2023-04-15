@@ -1,6 +1,7 @@
-import React from "react";
+import React from 'react'
 import styles from './styles.module.css'
-import { PlusIcon } from "./components/PlusIcon";
+import { PlusIcon } from './components/PlusIcon'
+import { TrashIcon } from './components/TrashIcon'
 
 interface CardProps {
     id: number
@@ -10,30 +11,52 @@ interface CardProps {
         currency: string
         value: number
     }
-    onClick: () => void
+    handlePlusIconClick: () => void
+    handleTrashIconClick: () => void
     count?: number
 }
 
-export const Card = ({ id, title, price, onClick, count = 0 }: CardProps) => {
+export function Card({
+    id, title, price, handlePlusIconClick, handleTrashIconClick, count,
+}: CardProps) {
     const { currency, value } = price
     const imageUrl = new URL(`../assets/images/${id}.png`, import.meta.url).href
     return (
         <section className={styles.card}>
             <h4 className={styles.title}>{title}</h4>
-            <div className={styles.container}>
-                <span className={styles.count}>
-                    {count}
-                </span>
-            </div>
-            <img className={styles.image} src={imageUrl} />
-            <span className={styles.price}>Цена: {value} {currency}</span>
+            {!!count && count > 0 && (
+                <div className={styles.container}>
+                    <span className={styles.count}>
+                        {count}
+                    </span>
+                </div>
+            )}
+            <img className={styles.image} src={imageUrl} alt={`${id}`} />
+            <span className={styles.price}>
+            Цена:{value}
+                {' '}
+                {currency}
+            </span>
             <span className={styles.add}>
                 <button
                     className={styles.button}
-                    onClick={onClick}>
+                    onClick={handlePlusIconClick}
+                >
                     <PlusIcon />
                 </button>
-                Добавить в корзину</span>
+            Добавить в корзину
+            </span>
+            {!!count && count > 0 && (
+                <span className={styles.add}>
+                    <button
+                        className={styles.button}
+                        onClick={handleTrashIconClick}
+                    >
+                        <TrashIcon />
+                    </button>
+              Удалить из корзины
+                </span>
+            )}
         </section>
     )
 }
