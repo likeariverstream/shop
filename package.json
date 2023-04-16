@@ -11,16 +11,15 @@
     "eslint": "eslint \"**/*.{ts,tsx}\"",
     "eslint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "stylelint": "stylelint .",
-    "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://likeariverstream.github.io/shop/",
   "dependencies": {
     "@types/node": "^18.15.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.10.0",
-    "react-router-dom": "^6.10.0"
+    "react-router-dom": "^6.10.0",
+    "deploy": "gh-pages -d dis"
   },
   "devDependencies": {
     "@types/react": "^18.0.35",
@@ -31,7 +30,6 @@
     "@typescript-eslint/parser": "^5.58.0",
     "@vitejs/plugin-react": "^3.1.0",
     "eslint": "^8.38.0",
-    "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "gh-pages": "^5.0.0",
