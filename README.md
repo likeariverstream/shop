@@ -1,22 +1,25 @@
-Тестовое задание
+    Тестовое задание
 Использованы React, Typescript, React Router, Vite, Eslint, Stylelint
 
-Установка
-# yarn install
+[Посмотреть](https://likeariverstream.github.io/shop/)
 
-Для разработки
+    Установка:
 
-# yarn dev
+### yarn install
 
-Проверка типов:
+    Для разработки:
 
-# yarn typescript
+### yarn dev
 
-Проверка и исправление ошибок Eslint:
+    Проверка типов:
 
-# yarn eslint
-# yarn eslint:fix
+### yarn typescript
 
-Проверка Stylelint:
+    Проверка и исправление ошибок Eslint:
 
-# yarn stylelint
+### yarn eslint
+### yarn eslint:fix
+
+    Проверка Stylelint:
+
+### yarn stylelint
