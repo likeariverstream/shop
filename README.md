@@ -1,7 +1,7 @@
     Тестовое задание
 Использованы React, Typescript, React Router, Vite, Eslint, Stylelint
 
-[Посмотреть](https://likeariverstream.github.io/shop/)
+[Посмотреть можно здесь](https://shop-service-16.onrender.com/)
 
     Установка:
 
