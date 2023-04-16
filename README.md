@@ -1,25 +1,25 @@
-    Тестовое задание
+## Тестовое задание
 Использованы React, Typescript, React Router, Vite, Eslint, Stylelint
 
 [Посмотреть можно здесь](https://shop-service-16.onrender.com/)
 
-    Установка:
+###     Установка:
 
-### yarn install
+ yarn install
 
-    Для разработки:
+###     Для разработки:
 
-### yarn dev
+yarn dev
 
-    Проверка типов:
+###     Проверка типов:
 
-### yarn typescript
+yarn typescript
 
-    Проверка и исправление ошибок Eslint:
+###     Проверка и исправление ошибок Eslint:
 
-### yarn eslint
-### yarn eslint:fix
+yarn eslint
+yarn eslint:fix
 
-    Проверка Stylelint:
+###     Проверка Stylelint:
 
-### yarn stylelint
+yarn stylelint
