@@ -75,10 +75,7 @@ export function BasketPage({
                 }
             })}
             <span className={styles.summary}>
-            Итого:
-                {summary}
-                {' '}
-                {currency}
+            Итого: {summary} {currency}
             </span>
             <input
                 className={styles.input}

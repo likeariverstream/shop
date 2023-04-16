@@ -11,17 +11,11 @@ import { Active, ProductWithCount } from '../types/types'
 import { Basket } from '../basket/Basket'
 import { BasketPage } from '../basket-page/BasketPage'
 
-export function Main() {
+export const Main = () => {
     const cardLimit = 6
     const navigate = useNavigate()
     const location = useLocation()
     React.useEffect(() => {
-        const arr = filterElementsFromArray(0, products)
-        setCards(arr)
-        setCount(cardLimit)
-    }, [products])
-    React.useEffect(() => {
-        console.log(location.pathname)
         if (location.pathname === '/') {
             setIsMain(true)
         }
@@ -29,23 +23,31 @@ export function Main() {
             setIsMain(false)
         }
     }, [location])
+
     const [count, setCount] = React.useState(cardLimit)
     const [isMain, setIsMain] = React.useState(true)
     const [cards, setCards] = React.useState<ProductWithCount[]>(products)
+    const [filteredCards, setFilteredCards] = React.useState<ProductWithCount[]>(cards)
     const [actives, setActives] = React.useState<Active[]>(brands)
     const [hasActiveCheckbox, setHasActiveCheckbox] = React.useState(false)
+    const [paginationButtonVisible, setPaginationButtonVisible] = React.useState(true)
     const [, setBasketCount] = React.useState(0)
-
+    React.useEffect(() => {
+        const arr = filterElementsFromArray(0, filteredCards, cardLimit)
+        setFilteredCards(arr)
+        setCount(cardLimit)
+    }, [])
     const handlePaginateButtonClick = () => {
-        if (count < products.length) {
-            const arr = filterElementsFromArray(count, products, cardLimit)
-            setCards(arr)
+
+        if (count < products.length) {  
+            const arr = filterElementsFromArray(count, cards, cardLimit)
+            setFilteredCards(arr)
             setCount(count + cardLimit)
         }
         if (count > products.length) {
             setCount(0)
-            const arr = filterElementsFromArray(0, products, cardLimit)
-            setCards(arr)
+            const arr = filterElementsFromArray(0, cards, cardLimit)
+            setFilteredCards(arr)
             setCount(cardLimit)
         }
     }
@@ -69,24 +71,30 @@ export function Main() {
     const handleFilterButtonClick = () => {
         if (!actives.some((item) => item.active)) {
             setActives(brands)
-            const arr = filterElementsFromArray(0, products)
+            const arr = filterElementsFromArray(0, filteredCards)
             setCards(arr)
+            setFilteredCards(arr)
         }
         if (actives.some((item) => item.active)) {
-            const productsWithActiveBrands = products.filter((product) => {
+            const productsWithActiveBrands = filteredCards.filter((product) => {
                 const activeBrand = actives.find((active) => active.id === product.brand)
                 return activeBrand && activeBrand.active
             })
             setCards(productsWithActiveBrands)
+            setFilteredCards(productsWithActiveBrands)
         }
+        setPaginationButtonVisible(false)
     }
     const hanldeResetBasket = () => {
         setCards(products)
+        setFilteredCards(products)
     }
     const handleResetFilterButtonClick = () => {
         const arr = filterElementsFromArray(0, products)
-        setCards(arr)
+        setCards(products)
+        setFilteredCards(arr)
         setActives(brands)
+        setPaginationButtonVisible(true)
     }
     const handleAddProduct = (id: number) => {
         const updatedCards = cards.map((product) => {
@@ -95,7 +103,14 @@ export function Main() {
             }
             return product
         })
+        const updatedFilteredCards = filteredCards.map((product) => {
+            if (product.id === id) {
+                return { ...product, count: product.count ? product.count + 1 : 1 }
+            }
+            return product
+        })
         setCards(updatedCards)
+        setFilteredCards(updatedFilteredCards)
     }
 
     const handleDeleteProduct = (id: number) => {
@@ -105,7 +120,14 @@ export function Main() {
             }
             return product
         })
+        const updatedFilteredCards = filteredCards.map((product) => {
+            if (product.id === id) {
+                return { ...product, count: product.count ? product.count - 1 : 0 }
+            }
+            return product
+        })
         setCards(updatedCards)
+        setFilteredCards(updatedFilteredCards)
     }
 
     const getBasketCount = (products: ProductWithCount[]): number => products.reduce((acc, product) => acc + (product.count || 0), 0)
@@ -134,12 +156,12 @@ export function Main() {
                     ))}
                     <Button text="Применить" onClick={handleFilterButtonClick} disabled={!hasActiveCheckbox} />
                     {hasActiveCheckbox && <Button text="Сбросить" onClick={handleResetFilterButtonClick} />}
-                    <Button text="Показать еще" onClick={handlePaginateButtonClick} />
+                    {paginationButtonVisible && <Button text="Показать еще" onClick={handlePaginateButtonClick} />}
                     <Basket onClick={handleBasketClick} count={getBasketCount(cards)} />
                 </section>
                 <section className={styles.products}>
-                    {cards.map((product) => (
-                        <Card
+                    {filteredCards.map((product, index) => {
+                        return <Card
                             key={product.id}
                             id={product.id}
                             title={product.title}
@@ -148,7 +170,7 @@ export function Main() {
                             handleTrashIconClick={() => handleDeleteProduct(product.id)}
                             count={product.count}
                         />
-                    ))}
+                    })}
                 </section>
             </main>
         ) : (

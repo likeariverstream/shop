@@ -14,8 +14,7 @@ export function Basket({ onClick, count }: BasketProps) {
                 <BasketIcon />
             </button>
             <span className={styles.count}>
-            В корзине:
-                {count}
+                В корзине: {count}
             </span>
         </>
     )

@@ -37,9 +37,7 @@ export function ProductItem({
                     </div>
                 </div>
                 <span className={styles.cost}>
-                Общая стоимость:{cost}
-                    {' '}
-                    {currency}
+                Общая стоимость: {cost} {currency}
                 </span>
             </div>
         </section>

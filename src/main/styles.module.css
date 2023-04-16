@@ -21,13 +21,13 @@
     gap: 24px;
 }
 
-@media screen and (width < 1320px) {
+@media screen and (width < 1360px) {
     .products {
         grid-template-columns: repeat(2, max-content);
     }
 }
 
-@media screen and (width < 800px) {
+@media screen and (width < 980px) {
     .products {
         grid-template-columns: repeat(1, max-content);
     }
